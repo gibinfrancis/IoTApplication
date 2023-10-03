@@ -1,3 +1,6 @@
+using IoT.Service.Implementation;
+using IoT.Service.Interface;
+
 namespace IoT.WebApi
 {
     public class Program
@@ -7,6 +10,7 @@ namespace IoT.WebApi
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddScoped<IDeviceService, DeviceService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

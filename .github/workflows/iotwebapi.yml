@@ -1,0 +1,38 @@
+name: Web Api
+env:
+  BUILD_NAME: ${{ github.run_number }}-${{ github.run_attempt }}
+on:
+  workflow_dispatch:
+  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+    steps:
+      - name: Check out  the repo
+        uses: actions/checkout@v3
+        
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v2.0.0
+        with:
+          dotnet-version: 6.x
+
+      - name: Restore
+        shell: bash
+        run: dotnet restore
+
+      - name: Build
+        shell: bash
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Test
+        shell: bash
+        run: dotnet test --no-restore
+        
+      - name: Upload artifact
+        if: github.event.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@master
+        with:
+            name: webapi-${{ github.run_number }}-${{ github.run_attempt }}
+          
