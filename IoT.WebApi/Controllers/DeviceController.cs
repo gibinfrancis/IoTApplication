@@ -1,3 +1,4 @@
+using IoT.DataContract.Request;
 using IoT.DataContract.Response;
 using IoT.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
@@ -5,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace IoT.WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class DeviceController : ControllerBase
     {
 
@@ -22,16 +23,17 @@ namespace IoT.WebApi.Controllers
         /// <summary>
         /// Get list of Devices
         /// </summary>
+        /// <param name="deviceListOptions"></param>
         /// <param name="PagingParameters"></param>
         /// <returns></returns>
-        [HttpGet(Name = "List")]
-        public async Task<Devices?> ListAsync([FromQuery] DataContract.Request.Pagination PagingParameters)
+        [HttpGet]
+        public async Task<Devices?> GetAsync([FromQuery] DeviceListReq? DeviceListOptions, [FromQuery] DataContract.Request.Pagination? PagingParameters)
         {
 
             try
             {
                 //get the list of devies from the service based on the parameters
-                return await _deviceService.ListAsync(PagingParameters);
+                return await _deviceService.ListAsync(DeviceListOptions, PagingParameters);
             }
             catch (Exception ex)
             {

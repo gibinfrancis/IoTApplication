@@ -4,16 +4,16 @@ using IoT.DataContract.Response;
 namespace IoT.Service.Interface
 {
     /// <summary>
-    /// Interface for Device Service
+    /// Interface for Event Service
     /// </summary>
-    public interface IDeviceService
+    public interface IEventService
     {
         /// <summary>
-        /// List all devices
+        /// List all events of a device
         /// </summary>
-        /// <param name="deviceListOptions"></param>
+        /// <param name="EventListReq"></param>
         /// <param name="pagingParameters"></param>
         /// <returns></returns>
-        Task<Devices> ListAsync(DeviceListReq? deviceListOptions, DataContract.Request.Pagination? pagingParameters);
+        Task<Events> ListAsync(EventListReq? EventListReq, DataContract.Request.Pagination? pagingParameters);
     }
 }

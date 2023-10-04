@@ -18,7 +18,7 @@ namespace IoT.Test
             DeviceService deviceService = new DeviceService();
 
             //Act
-            Devices res = await deviceService.ListAsync(null);
+            Devices res = await deviceService.ListAsync(null, null);
 
 
             //Assert

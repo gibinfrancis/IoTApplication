@@ -2,10 +2,16 @@
 {
 
     /// <summary>
-    /// Device List Request
+    /// Event List Request
     /// </summary>
-    public class DeviceListReq
+    public class EventListReq
     {
+
+        /// <summary>
+        /// Device id
+        /// </summary>
+        public Guid DeviceId { get; set; }
+
         /// <summary>
         /// Sort by column name
         /// </summary>

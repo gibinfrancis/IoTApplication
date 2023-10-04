@@ -3,17 +3,17 @@
     /// <summary>
     /// Device model
     /// </summary>
-    public class Device
+    public class Device : IEntity
     {
         /// <summary>
         /// Identifier
         /// </summary>
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Device id
         /// </summary>
-        public string DeviceId { get; set; }
+        public Guid DeviceId { get; set; }
 
         /// <summary>
         /// Device name
@@ -36,11 +36,6 @@
         public DeviceStatus DeviceStatus { get; set; }
 
         /// <summary>
-        /// Last Updated On
-        /// </summary>
-        public DateTime UpdatedOn { get; set; }
-
-        /// <summary>
         /// Active Deployment Id
         /// </summary>
         public long ActiveDeploymentId { get; set; }
@@ -55,6 +50,21 @@
         /// </summary>
         public float FirmwareVersion { get; set; }
 
+        /// <summary>
+        /// Created On
+        /// </summary>
+        public DateTime CreatedOn { get; set; }
+
+        /// <summary>
+        /// Last Updated On
+        /// </summary>
+        public DateTime UpdatedOn { get; set; }
+
+
+        /// <summary>
+        /// Is Deleted
+        /// </summary>
+        public bool IsDeleted { get; set; }
 
     }
 
