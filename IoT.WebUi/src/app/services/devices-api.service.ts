@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DevicesApiService {
 
   private apiUrl = 'https://localhost:7163/api/Device'; // Replace with your API endpoint

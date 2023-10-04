@@ -309,39 +309,8 @@
     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
   <span>IoT Application</span>
   <div class="spacer"></div>
-
 </div>
 
-<div class="content" role="main">
 
-  <h5>Devices</h5>
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Sl.No</th>
-        <th>Name</th>
-        <th>Deployment Ver</th>
-        <th>FirmWare Ver</th>
-        <th>Status</th>
-        <th>Reported On</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of data?.items">
-        <td>{{ item.id }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.deploymentVersion }}</td>
-        <td>{{ item.firmwareVersion }}</td>
-        <td><button type="button" [ngClass]="item.deviceStatus == '2' ? 'btn-success' : 'btn-danger'"
-            class="btn  btn-circle btn-sm"></button></td>
-        <td>{{ item.updatedOn }}</td>
-        <td><button class="btn btn-light btn-sm" (click)="viewDetails(item.deviceId)">View</button></td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
 
 <router-outlet></router-outlet>

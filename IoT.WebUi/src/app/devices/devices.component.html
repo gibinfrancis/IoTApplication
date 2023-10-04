@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="content-fluid" role="main">
+        <br /><br /><br />
+        <h5>Devices</h5>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sl.No</th>
+                    <th>Name</th>
+                    <th>Deployment Ver</th>
+                    <th>FirmWare Ver</th>
+                    <th>Status</th>
+                    <th>Reported On</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data?.items">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.deploymentVersion }}</td>
+                    <td>{{ item.firmwareVersion }}</td>
+                    <td><button type="button" [ngClass]="item.deviceStatus == '2' ? 'btn-success' : 'btn-danger'"
+                            class="btn  btn-circle btn-sm"></button></td>
+                    <td>{{ item.updatedOn }}</td>
+                    <td><button class="btn btn-light btn-sm" (click)="viewDetails(item.deviceId)">View</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

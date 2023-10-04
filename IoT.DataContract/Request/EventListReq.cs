@@ -13,6 +13,11 @@
         public Guid DeviceId { get; set; }
 
         /// <summary>
+        /// Event id
+        /// </summary>
+        public long EventId { get; set; }
+
+        /// <summary>
         /// Sort by column name
         /// </summary>
         public string? SortBy { get; set; }

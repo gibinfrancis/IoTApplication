@@ -31,7 +31,7 @@ namespace IoT.Service.Implementation
                 {
                     Id = i + 1,
                     DeviceId = EventListReq.DeviceId,
-                    EventId = random.Next(1, 100),
+                    EventId = (EventListReq.EventId != 0 ? EventListReq.EventId : random.Next(1, 100)),
                     EventName = Utils.GenerateRandomString(5),
                     EventValue = random.Next(1, 100),
                     UpdatedOn = Utils.GenerateRandomDate(),

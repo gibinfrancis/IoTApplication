@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="content-fluid" role="main">
+        <br /><br /><br />
+        <h5>Events</h5>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sl.No</th>
+                    <th>Event Name</th>
+                    <th>Event Value</th>
+                    <th>Updated On</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data?.items">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.eventName }}</td>
+                    <td>{{ item.eventValue }}</td>
+                    <td>{{ item.updatedOn }}</td>
+                    <td><button class="btn btn-light btn-sm"
+                            (click)="viewDetails(item.deviceId, item.eventId)">View</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

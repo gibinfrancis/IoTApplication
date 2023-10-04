@@ -32,7 +32,7 @@ namespace IoT.WebApi.Controllers
 
             try
             {
-                //get the list of devies from the service based on the parameters
+                //get the list of devices from the service based on the parameters
                 return await _deviceService.ListAsync(DeviceListOptions, PagingParameters);
             }
             catch (Exception ex)
